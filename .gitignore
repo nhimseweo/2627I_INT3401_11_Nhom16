@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Cache / file tạm sinh khi chạy
+.cache/
+*.tmp
+*.part
+*.txt.part
+
+# Dữ liệu Q7 tự tải về (tùy chọn, ~1MB)
+input.txt
+
+# IDE / hệ điều hành
+.idea/
+.DS_Store
+Thumbs.db
