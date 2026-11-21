@@ -1,6 +1,6 @@
 # Super ML Bros. — CS188 Project 5 (Machine Learning)
 
-Bài tập lớn môn **INT3401 (lớp 11)** — nhóm X. Dự án hiện thực lại *Project 5: Machine Learning* của CS188 (UC Berkeley) bằng **PyTorch**, kèm một **giao diện GUI (Tkinter)** theo phong cách Super Mario để train, kiểm tra và chạy autograder cho từng câu.
+Bài tập lớn môn **INT3401_11** — nhóm 16. Dự án hiện thực lại *Project 5: Machine Learning* của CS188 (UC Berkeley) bằng **PyTorch**, kèm một **giao diện GUI (Tkinter)** theo phong cách Super Mario để train, kiểm tra và chạy autograder cho từng câu.
 
 ## Nội dung dự án
 
@@ -105,8 +105,10 @@ Kết quả đo trên máy của nhóm (xem chi tiết trong `qN_xxx/weights/met
 
 | STT | Họ và tên | MSSV | Vai trò |
 |-----|-----------|------|---------|
-| 1 | ... | ... | Nhóm trưởng |
-| 2 | ... | ... | ... |
+| 1 | Nguyễn Phương Thảo | ... | Nhóm trưởng |
+| 2 | Nguyễn Phương Anh | 24022940 | ... |
+| 3 | Nguyễn Thùy Dương | ... | ... |
+| 4 | Cao Thùy Giang | ... | ... |
 
 ## Ghi chú
 
