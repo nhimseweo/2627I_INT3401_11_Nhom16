@@ -31,8 +31,8 @@ Cấu trúc các thư mục khác:
 ## Cài đặt
 
 ```bash
-git clone https://github.com/nhimseweo/INT3401_11_Nhom16.git
-cd INT3401_11_Nhom16
+git clone https://github.com/nhimseweo/2627I_INT3401_11_Nhom16.git
+cd 2627I_INT3401_11_Nhom16
 
 # (khuyến nghị) tạo môi trường ảo
 python -m venv .venv
@@ -105,10 +105,10 @@ Kết quả đo trên máy của nhóm (xem chi tiết trong `qN_xxx/weights/met
 
 | STT | Họ và tên | MSSV | Vai trò |
 |-----|-----------|------|---------|
-| 1 | Nguyễn Phương Thảo | ... | Nhóm trưởng |
+| 1 | Nguyễn Phương Thảo | 24023068 | Nhóm trưởng |
 | 2 | Nguyễn Phương Anh | 24022940 | ... |
-| 3 | Nguyễn Thùy Dương | ... | ... |
-| 4 | Cao Thùy Giang | ... | ... |
+| 3 | Nguyễn Thùy Dương | 24022975 | ... |
+| 4 | Cao Thùy Giang | 24022980 | ... |
 
 ## Ghi chú
 
