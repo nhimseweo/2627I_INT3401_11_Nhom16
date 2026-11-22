@@ -2,6 +2,8 @@
 
 Bài tập lớn môn **INT3401_11** — nhóm 16. Dự án hiện thực lại *Project 5: Machine Learning* của CS188 (UC Berkeley) bằng **PyTorch**, kèm một **giao diện GUI (Tkinter)** theo phong cách Super Mario để train, kiểm tra và chạy autograder cho từng câu.
 
+> Số liệu trong README này ứng với mã nguồn **V11** (xem báo cáo kèm theo).
+
 ## Nội dung dự án
 
 | Câu | Thư mục | Nội dung | Điểm |
@@ -24,7 +26,7 @@ Cấu trúc các thư mục khác:
 
 ## Yêu cầu
 
-- Python **3.9 trở lên** (đã chạy thử trên Python 3.12)
+- Python **3.9 trở lên** (đã chạy thử trên Python 3.12 và 3.13; kiểm thử V11 trên Linux, PyTorch 2.10.0, CPU)
 - `tkinter` (đi kèm Python trên Windows/macOS; Linux: `sudo apt install python3-tk`)
 - Các thư viện trong `requirements.txt`: `torch`, `numpy`, `matplotlib`, `pillow`
 
@@ -89,26 +91,51 @@ python tools/run_q7.py generate --prompt "Romeo:" --length 200 --temperature 0.8
 
 Trọng số lưu tại `q7/weights/model.pt`.
 
+> **Lưu ý:** trong lần kiểm thử lại V11, môi trường không tải được dữ liệu Shakespeare nên chưa có kết quả huấn luyện đầy đủ trên corpus này. Q7 mới được kiểm thử chức năng (train, lưu/nạp checkpoint, sinh ký tự) trên dữ liệu tổng hợp; chất lượng sinh văn bản Shakespeare chưa được đánh giá.
+
 ## Kết quả
 
-Kết quả đo trên máy của nhóm (xem chi tiết trong `qN_xxx/weights/metrics.json` và báo cáo):
+### Điểm Autograder (chạy lại bằng `python tools/run_autograder.py all`)
 
-| Câu | Kết quả | Câu | Kết quả |
-|-----|---------|-----|---------|
-| Q1 | 100% | Q4 | 89.4% |
-| Q2 | loss ≈ 1e-4 | Q5 | 97.0% |
-| Q3 | 97.7% | Q6 | 2/2 điểm |
+| Câu | Kết quả kiểm thử | Điểm |
+|-----|------------------|------|
+| Q1 | PASS | 5/5 |
+| Q2 | MSE ≈ 9,8e-5 | 5/5 |
+| Q3 | Test accuracy 97,92% | 5/5 |
+| Q4 | Test accuracy 91,00% | 5/5 |
+| Q5 | Test rút gọn 100% | 3/3 |
+| Q6 | PASS | 2/2 |
+| **Tổng** | | **25/25** |
 
-Điểm autograder: Q1 5/5 · Q2 5/5 · Q3 5/5 · Q5 3/3 · Q6 2/2.
+Đây là điểm chấm cục bộ, không phải điểm chính thức của học phần.
+
+### Đánh giá checkpoint đã lưu (trọng số đi kèm repo)
+
+Xem chi tiết trong `qN_xxx/weights/metrics.json` và báo cáo.
+
+| Câu | Tập đánh giá | Kết quả |
+|-----|--------------|---------|
+| Q1 | 10000 điểm sinh mới (100% trên 500 điểm train) | 99,90% |
+| Q2 | MSE trên 2001 điểm | ≈ 9,58e-5 (MAE 0,006168; sai số lớn nhất 0,059354) |
+| Q3 | MNIST test (5000 ảnh) | 97,70% |
+| Q4 | Test (500 từ) | 90,00% (dev: 89,40%) |
+| Q5 | MNIST test (5000 ảnh) | 97,02% |
+| Q6 | Kiểm thử tính nhân quả | Đạt |
+
+Ghi chú khi đọc kết quả:
+
+- **Autograder và checkpoint cho số khác nhau** (ví dụ Q3: 97,92% so với 97,7%; Q4: 91,00% so với 90,0%) vì Autograder tự tạo và huấn luyện mô hình riêng.
+- **Q5:** nhánh Autograder dùng 200 ảnh huấn luyện, nhánh GUI dùng 60.000 ảnh (kèm Test-Time Augmentation khi dự đoán chữ số vẽ tay). Tập dev/test rút gọn của Autograder giao với tập train nên 100% không đại diện cho độ chính xác thực.
+- Q3 và Q5 đều giảm khoảng 7 điểm phần trăm khi ảnh bị dịch 1 pixel (chi tiết trong báo cáo).
 
 ## Thành viên nhóm
 
 | STT | Họ và tên | MSSV | Vai trò |
 |-----|-----------|------|---------|
-| 1 | Nguyễn Phương Thảo | 24023068 | Nhóm trưởng |
-| 2 | Nguyễn Phương Anh | 24022940 | ... |
-| 3 | Nguyễn Thùy Dương | 24022975 | ... |
-| 4 | Cao Thùy Giang | 24022980 | ... |
+| 1 | Nguyễn Phương Thảo | 24023068 | Nhóm trưởng — Q2, Q6, tổng hợp báo cáo |
+| 2 | Nguyễn Phương Anh | 24022940 | Q3, Q7, GitHub, báo cáo |
+| 3 | Nguyễn Thùy Dương | 24022975 | Q4, Q7, báo cáo |
+| 4 | Cao Thùy Giang | 24022980 | Q1, Q5, báo cáo |
 
 ## Ghi chú
 
